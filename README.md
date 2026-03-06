@@ -35,6 +35,7 @@ Raw Events:
 ### layer Separation
 
 **Domain Layer**
+
 - Raw event modeling
 - Normalization
 - Filtering
@@ -42,6 +43,7 @@ Raw Events:
 - Derived metric computation
 
 **Presentation Layer**
+
 - Table rendering
 - Sorting
 - UI interaction states
