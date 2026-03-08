@@ -8,7 +8,7 @@ This dashboard aims to provide a structured, performance-aware frontend architec
 
 ---
 
-## 3. Goals
+## 2. Goals
 
 What this project must demonstrate:
 
@@ -21,7 +21,7 @@ What this project must demonstrate:
 
 ---
 
-## 4. Architecture Direction
+## 3. Architecture Direction
 
 ### Data Transformation Pipeline
 
@@ -57,16 +57,16 @@ Raw Events:
 
 ---
 
-## 5. Rendering Strategy
+## 4. Rendering Strategy
 
-- Fully client-side rendering
+- Fully CSR (_client-side rendering_)
 - No SSR
 - No backend integration
 - Mocked dataset for controlled experimentation
 
 ---
 
-## 6. Performance Philosophy
+## 5. Performance Philosophy
 
 - Filtering occurs before sorting to minimize computational cost.
 - Expensive operations are isolated and memoized.
