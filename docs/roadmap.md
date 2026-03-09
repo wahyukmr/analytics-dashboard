@@ -63,13 +63,11 @@
 
 ### Filtering
 
-- Choose events according to the period. Example: `2026-03-01 → 2026-03-07`
+Choose events according to the period. Example: `2026-03-01 → 2026-03-07`
 
 ### Metrics computation
 
 - Calculate **DAU** (daily unique user per date range)
-- Calculate **MAU** (monthly unique user per date range)
-- Calculate **feature usage** (how many times the feature is used)
 - Calculate **total signups** (total registered users)
 - Calculate **total upgrades** (total user who switched to the pro plan)
 - Calculate **conversion** (upgrade / signup)
@@ -90,12 +88,22 @@
   sort table
   ```
 
-### Render minimal UI
+### Minimal UI rendering
 
-- Turn on the pipeline structure
+Displays the pipeline structure up to the `compute metrics` stage
+
+### Chart data builder
+
+Converting events into data that can be plotted on a chart
+
+### Data table + sorting
+
+Displays aggregated data in a sortable table
 
 ## PHASE 5 — PERFORMANCE PASS
 
+- Memoization audit
 - Avoid unnecessary re-render
-- Lazy loading section
+- Dataset scalling
+- Lazy loading chart
 - Lighthouse check
