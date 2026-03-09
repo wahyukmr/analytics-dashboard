@@ -39,8 +39,6 @@ export interface SortConfig {
 
 export type Metrics = {
   dau: number; // Daily Active Users
-  mau: number; // Monthly Active Users
-  featureUsage: Record<FeaturesType, number>; // Usage count for each feature
   totalSignups: number; // Total number of signups
   totalUpgrades: number; // Total number of upgrades to Pro
   conversionRate: number; // Percentage of users who upgraded to Pro
@@ -49,5 +47,4 @@ export type Metrics = {
 export type ChartPoint = {
   date: string; // YYYY-MM-DD format
   dau: number; // Daily Active Users for that date
-  mau: number; // Monthly Active Users for that date
 };
