@@ -1,11 +1,15 @@
 import { mockEvents } from "../data/mockEvents";
-import type { DateRange } from "../types";
-import buildChartPoints from "../utils/chart";
-import { filterByDate } from "../utils/filter";
-import { computeMetrics } from "../utils/metrics";
-import { normalizeEvents } from "../utils/normalize";
+import type { DateRange, SortConfig } from "../types";
+import {
+  buildChartPoints,
+  buildTableRows,
+  computeMetrics,
+  filterByDate,
+  normalizeEvents,
+  sortTableRows,
+} from "../utils";
 
-export function useDashboardData(range: DateRange) {
+export function useDashboardData(range: DateRange, sortConfig: SortConfig) {
   const normalized = normalizeEvents(mockEvents);
 
   const filtered = filterByDate(normalized, range);
@@ -14,8 +18,13 @@ export function useDashboardData(range: DateRange) {
 
   const chartPoints = buildChartPoints(filtered);
 
+  const tableRows = buildTableRows(filtered);
+
+  const sortedRows = sortTableRows(tableRows, sortConfig);
+
   return {
     metrics,
     chartPoints,
+    tableRows: sortedRows,
   };
 }

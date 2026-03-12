@@ -1,5 +1,4 @@
 import React from "react";
-import type { ChartPoint } from "../types";
 import {
   CartesianGrid,
   Line,
@@ -9,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import type { ChartPoint } from "../types";
 
 export default function ChartSection({
   data,
