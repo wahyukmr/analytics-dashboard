@@ -3,6 +3,7 @@ import type { DateRange, SortConfig, SortKey } from "../types";
 import { useDashboardData } from "../hooks/useDashboardData";
 import ChartSection from "./ChartSection";
 import DataTable from "./DataTable";
+import MetricCard from "./MetricCard";
 
 export default function DashboardPage(): React.JSX.Element {
   const [dateRange] = useState<DateRange>({
@@ -32,17 +33,30 @@ export default function DashboardPage(): React.JSX.Element {
   };
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="dashboard container">
+      <h1>Analytics Dashboard</h1>
 
-      <p>DAU: {metrics.dau}</p>
-      <p>Signups: {metrics.totalSignups}</p>
-      <p>Upgrades: {metrics.totalUpgrades}</p>
-      <p>Conversion Rate: {metrics.conversionRate.toFixed(2)}%</p>
+      <section className="metrics">
+        <MetricCard label="Daily Active Users" value={metrics.dau} />
+        <MetricCard label="Total Signups" value={metrics.totalSignups} />
+        <MetricCard label="Total Upgrades" value={metrics.totalUpgrades} />
+        <MetricCard
+          label="Conversion Rate"
+          value={`${metrics.conversionRate.toFixed(2)}%`}
+        />
+      </section>
 
-      <ChartSection data={chartPoints} />
+      <section className="chart">
+        <ChartSection data={chartPoints} />
+      </section>
 
-      <DataTable rows={tableRows} onSort={handleSort} sortConfig={sortConfig} />
+      <section className="table">
+        <DataTable
+          rows={tableRows}
+          onSort={handleSort}
+          sortConfig={sortConfig}
+        />
+      </section>
     </div>
   );
 }

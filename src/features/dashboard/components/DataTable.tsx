@@ -23,7 +23,13 @@ function DataTable({
     const indicator = isActive ? (dir === "asc" ? "▲" : "▼") : "⇵";
 
     return (
-      <th aria-sort={ariaSort} style={{ textAlign: "left", padding: "8px" }}>
+      <th
+        aria-sort={ariaSort}
+        style={{
+          padding: "8px",
+          borderRight: "1px solid gray",
+        }}
+      >
         <button
           type="button"
           onClick={() => onSort(key)}
@@ -35,7 +41,8 @@ function DataTable({
             display: "flex",
             alignItems: "center",
             gap: "6px",
-            padding: 0,
+            margin: "0 auto",
+            padding: "0",
           }}
           aria-label={`Sort by ${label}`}
         >
@@ -47,10 +54,24 @@ function DataTable({
   };
 
   return (
-    <table style={{ borderCollapse: "collapse", width: "100%" }}>
+    <table
+      style={{
+        width: "100%",
+        backgroundColor: "#1A1A1A",
+        borderRadius: "16px",
+        borderSpacing: "5px",
+      }}
+    >
       <thead>
-        <tr>
-          <th style={{ padding: "8px" }}>Feature</th>
+        <tr style={{ textAlign: "center" }}>
+          <th
+            style={{
+              padding: "8px",
+              borderRight: "1px solid gray",
+            }}
+          >
+            Feature
+          </th>
           {renderHeader("usage", "Usage")}
           <th style={{ padding: "8px" }}>Unique Users</th>
         </tr>

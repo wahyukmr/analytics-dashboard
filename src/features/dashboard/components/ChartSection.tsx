@@ -25,12 +25,12 @@ export default function ChartSection({
 
           <YAxis allowDecimals={false} />
 
-          <Tooltip />
+          <Tooltip itemStyle={{ color: "#00695C" }} />
 
           <Line
             type="monotone"
             dataKey="dau"
-            stroke="#3b82f6"
+            stroke="#C5E1A5"
             strokeWidth={2}
           />
         </LineChart>
