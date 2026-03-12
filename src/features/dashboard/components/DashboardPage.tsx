@@ -8,7 +8,7 @@ export default function DashboardPage(): React.JSX.Element {
     endDate: "2026-03-07",
   });
 
-  const { metrics } = useDashboardData(dateRange);
+  const { metrics, chartPoints } = useDashboardData(dateRange);
 
   return (
     <div>
@@ -18,6 +18,8 @@ export default function DashboardPage(): React.JSX.Element {
       <p>Signups: {metrics.totalSignups}</p>
       <p>Upgrades: {metrics.totalUpgrades}</p>
       <p>Conversion Rate: {metrics.conversionRate.toFixed(2)}%</p>
+
+      <pre>{JSON.stringify(chartPoints, null, 2)}</pre>
     </div>
   );
 }
