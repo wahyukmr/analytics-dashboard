@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { DateRange } from "../types";
 import { useDashboardData } from "../hooks/useDashboardData";
+import ChartSection from "./ChartSection";
 
 export default function DashboardPage(): React.JSX.Element {
   const [dateRange] = useState<DateRange>({
@@ -19,7 +20,7 @@ export default function DashboardPage(): React.JSX.Element {
       <p>Upgrades: {metrics.totalUpgrades}</p>
       <p>Conversion Rate: {metrics.conversionRate.toFixed(2)}%</p>
 
-      <pre>{JSON.stringify(chartPoints, null, 2)}</pre>
+      <ChartSection data={chartPoints} />
     </div>
   );
 }
