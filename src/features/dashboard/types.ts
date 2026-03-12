@@ -24,12 +24,12 @@ export interface NormalizedEvent {
 }
 
 // Define the structure of the API response for fetching events
-export type DateRange = {
+export interface DateRange {
   startDate: string; // YYYY-MM-DD format
   endDate: string;
-};
+}
 
-export type SortKey = "feature" | "usage" | "conversion";
+export type SortKey = "feature" | "usage" | "uniqueUsers";
 type SortDirection = "asc" | "desc";
 
 export interface SortConfig {
@@ -37,14 +37,20 @@ export interface SortConfig {
   direction: SortDirection;
 }
 
-export type Metrics = {
+export interface Metrics {
   dau: number; // Daily Active Users
   totalSignups: number; // Total number of signups
   totalUpgrades: number; // Total number of upgrades to Pro
   conversionRate: number; // Percentage of users who upgraded to Pro
-};
+}
 
-export type ChartPoint = {
+export interface ChartPoint {
   date: string; // YYYY-MM-DD format
   dau: number; // Daily Active Users for that date
-};
+}
+
+export interface TableRow {
+  feature: FeaturesType;
+  usage: number;
+  uniqueUsers: number;
+}
