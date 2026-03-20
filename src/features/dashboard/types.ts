@@ -2,6 +2,9 @@ type EventType = "signup" | "login" | "feature_used" | "upgrade";
 type FeaturesType = "export_csv" | "analytics_view" | "dashboard_share";
 type PlanType = "free" | "pro";
 
+// Define user personas based on their behavior and engagement (casual = infrequent users, active = regular users, power = heavy user + upgrade)
+export type UserPersona = "casual" | "active" | "power";
+
 // Define the structure of the raw event data as received from the API
 export interface RawEvent {
   id: string;
@@ -24,10 +27,12 @@ export interface NormalizedEvent {
 }
 
 // Define the structure of the API response for fetching events
-export interface DateRange {
-  startDate: string; // YYYY-MM-DD format
-  endDate: string;
-}
+export type DateRange =
+  | "today"
+  | "last_7_days"
+  | "this_month"
+  | "last_month"
+  | "3_months_ago";
 
 export type SortKey = "feature" | "usage" | "uniqueUsers";
 type SortDirection = "asc" | "desc";
