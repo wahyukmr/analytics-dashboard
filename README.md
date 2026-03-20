@@ -26,10 +26,15 @@ What this project must demonstrate:
 ### Data Transformation Pipeline
 
 Raw Events:
+
 -> Normalized Model
+
 -> Filtered Dataset (by date range)
+
 -> Derived Metrics & Chart Dataset
+
 -> Table Dataset
+
 -> Sorted Table View
 
 ### layer Separation
