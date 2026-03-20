@@ -3,18 +3,18 @@ import type { TableRow, SortConfig, SortKey } from "../types";
 
 interface DataTableProps {
   rows: TableRow[];
-  onSort: (key: SortKey) => void;
+  onChangeSort: (key: SortKey) => void;
   sortConfig: SortConfig;
 }
 
 function DataTable({
   rows,
-  onSort,
+  onChangeSort,
   sortConfig,
 }: DataTableProps): React.JSX.Element {
   const renderHeader = (key: SortKey, label: string) => {
-    const isActive = sortConfig.key === key;
-    const dir = isActive ? sortConfig.direction : undefined;
+    const isActive = sortConfig?.key === key;
+    const dir = isActive ? sortConfig?.direction : undefined;
     const ariaSort = isActive
       ? dir === "asc"
         ? "ascending"
@@ -32,7 +32,7 @@ function DataTable({
       >
         <button
           type="button"
-          onClick={() => onSort(key)}
+          onClick={() => onChangeSort(key)}
           style={{
             background: "none",
             border: "none",
@@ -78,7 +78,7 @@ function DataTable({
       </thead>
 
       <tbody>
-        {rows.map((row) => (
+        {rows?.map((row) => (
           <tr key={row.feature}>
             <td style={{ padding: "8px" }}>{row.feature}</td>
             <td style={{ padding: "8px" }}>{row.usage}</td>
