@@ -1,4 +1,4 @@
-import type { NormalizedEvent, TableRow } from "../types";
+import type { NormalizedEvent, TableRow } from "../../dashboardTypes";
 
 export function buildTableRows(events: NormalizedEvent[]): TableRow[] {
   const featureMap = new Map<string, { usage: number; users: Set<string> }>();

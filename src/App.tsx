@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Dashboard from "./features/dashboard/Dashboard";
+import { DashboardView } from "./features/dashboard";
 
 export default function App(): React.JSX.Element {
-  return <Dashboard />;
+  return <DashboardView />;
 }

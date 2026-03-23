@@ -1,4 +1,4 @@
-import type { NormalizedEvent, RawEvent } from "../types";
+import type { NormalizedEvent, RawEvent } from "../dashboardTypes";
 
 export function normalizeEvents(events: RawEvent[]): NormalizedEvent[] {
   return events.map((event) => {

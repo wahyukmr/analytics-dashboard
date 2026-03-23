@@ -1,6 +1,6 @@
-import type { DateRange, NormalizedEvent } from "../types";
+import type { DateRange, NormalizedEvent } from "../dashboardTypes";
 
-export function filterByDate(
+export function filterByDateRange(
   events: NormalizedEvent[],
   range: DateRange,
 ): NormalizedEvent[] {

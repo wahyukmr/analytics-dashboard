@@ -1,4 +1,4 @@
-import type { Metrics, NormalizedEvent } from "../types";
+import type { Metrics, NormalizedEvent } from "../../dashboardTypes";
 
 export function computeMetrics(events: NormalizedEvent[]): Metrics {
   const activeUsers = new Set<string>();

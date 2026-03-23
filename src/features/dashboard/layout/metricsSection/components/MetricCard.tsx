@@ -7,6 +7,8 @@ export default function MetricCard({
   label,
   value,
 }: MetricCardProps): React.JSX.Element {
+  console.log("MetricCard");
+
   return (
     <div className="metric-card">
       <p>{label}</p>

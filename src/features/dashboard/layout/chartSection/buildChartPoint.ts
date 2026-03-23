@@ -1,4 +1,4 @@
-import type { ChartPoint, NormalizedEvent } from "../types";
+import type { ChartPoint, NormalizedEvent } from "../../dashboardTypes";
 
 export function buildChartPoints(events: NormalizedEvent[]): ChartPoint[] {
   const dailyUsers = new Map<string, Set<string>>(); // date -> set of userIds

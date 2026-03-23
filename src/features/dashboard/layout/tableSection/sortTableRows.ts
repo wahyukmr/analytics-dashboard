@@ -1,4 +1,4 @@
-import type { SortConfig, TableRow } from "../types";
+import type { SortConfig, TableRow } from "../../dashboardTypes";
 
 export function sortTableRows(
   rows: TableRow[],
